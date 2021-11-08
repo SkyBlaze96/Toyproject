@@ -1,3 +1,9 @@
+ /*
+MQ 센서  라이브러리 사용. 아두이노 메가 보드 사용,
+ESP 8266 + ESP01 어댑터 사용.
+2021.11.05 최종 수정
+*/
+
   #include <MsTimer2.h>
   #include <MQUnifiedsensor.h>
   #define         Board                   ("Arduino MEGA")
