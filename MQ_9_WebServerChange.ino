@@ -67,16 +67,6 @@ void httpclient(String char_input) { //네트워크 전송함수
   Serial1.println("AT+CIPCLOSE");
   delay(100);
 }
-  void work_rel(){ //릴레이 ON, 부저 ON
-    digitalWrite(8,HIGH);
-    digitalWrite(9,HIGH);
-    tone(piezo, 336,500);
-  }
-  void off_rel(){ //릴레이 OFF, 부저 OFF
-    digitalWrite(8,LOW);
-    digitalWrite(9,LOW);
-    noTone(piezo);
-  }
   void average_cal(){         //배열 평균 구하는 함수
     
     float avr_sum = 0;
@@ -111,6 +101,16 @@ void httpclient(String char_input) { //네트워크 전송함수
   void timer_reset(){               //평균값이 일정 수치로 내려갔을 때 카운트를 리셋한다.
     time_cnt = 0 ;
     }
+  void work_rel(){ //릴레이 ON, 부저 ON
+    digitalWrite(8,HIGH);
+    digitalWrite(9,HIGH);
+    tone(piezo, 336,500);
+  }
+  void off_rel(){ //릴레이 OFF, 부저 OFF
+    digitalWrite(8,LOW);
+    digitalWrite(9,LOW);
+    noTone(piezo);
+  }
   void setup() {
     Serial.begin(9600); //내장 시리얼 ON
     Serial1.begin(9600); // ESP8266 활을 위한 시리얼 ON
