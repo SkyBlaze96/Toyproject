@@ -94,7 +94,7 @@ void httpclient(String char_input) { //네트워크 전송함수
        }   
       reset_var++;                          //배열 번호 증가
   
-      if(average>=60){                 //평균 농도가 60ppm이 넘으면
+      if(average>=250){                 //평균 농도가 250ppm이 넘으면
         average_cal();                 //평균값 계산 함수 호출
         timer();                       //타이머 누적 시작
         work_rel();                    //릴레이 동작
@@ -141,7 +141,7 @@ void httpclient(String char_input) { //네트워크 전송함수
     String char_input = ""; 
     Serial.println(average);
     delay(3000); 
-       if(time_cnt >=10 && average >60 ){ //카운트 10
+       if(time_cnt >=180000 && average >250 ){ //카운트 10
         timer_reset();        
         char_input =String (average) +"&user_mid="+mid;
         httpclient(char_input); 
