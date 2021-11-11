@@ -113,7 +113,7 @@ void httpclient(String char_input) { //네트워크 전송함수
   }
   void setup() {
     Serial.begin(9600); //내장 시리얼 ON
-    Serial1.begin(9600); // ESP8266 활을 위한 시리얼 ON
+    Serial1.begin(9600); // ESP8266 활용을 위한 시리얼 ON
     pinMode(8,OUTPUT);
     pinMode(9,OUTPUT);
     MQ9.setRegressionMethod(1); //_PPM =  a*ratio^b
@@ -139,9 +139,7 @@ void httpclient(String char_input) { //네트워크 전송함수
     MQ9.setA(599.65); MQ9.setB(-2.244); // MQ-9 CO가스 측정 셋팅.
     String mid = "mid_1";  // 기기 ID
     String char_input = ""; 
-    Serial.println(average);
-    delay(3000); 
-       if(time_cnt >=180000 && average >250 ){ //카운트 10
+       if(time_cnt >=180000 && average >250 ){ 
         timer_reset();        
         char_input =String (average) +"&user_mid="+mid;
         httpclient(char_input); 
