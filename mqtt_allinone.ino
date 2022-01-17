@@ -20,9 +20,9 @@ MQUnifiedsensor MQ135("Arduino Mega", 5, 10, A1, "MQ-135");
 #include <MHZ19.h> //CO가스 설정
 MHZ19 mhz(&Serial3);
 
-const char *ssid = "GGK";
-const char *password = "rla870626";
-const char *mqttServer = "211.48.228.15"; //broker.hivemq.com
+const char *ssid = "";  
+const char *password = "";
+const char *mqttServer = ""; //broker server ip
 int mqttPort = 1883;
 long lastMsg = 0;
 
